@@ -22,7 +22,7 @@
 }
 
 .cards > ul > li {
-  border: 1px solid #aaaaaa;
+  border: 1px solid #aaa;
   background-color: var(--dark-color);
   border-radius: 4px;
   width: 100%;
