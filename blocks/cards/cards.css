@@ -1,22 +1,31 @@
 
-.cards{
+.cards-wrapper {
+  margin: 0 auto;
+  max-width: 1200px;
   display: flex;
+  justify-content: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(257px, 1fr));
+  gap: 24px;
   width: 100%;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .cards > ul {
   list-style: none;
-  margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  grid-gap: 24px;
+  margin: 0;
+  display: contents; /* Use display: contents to keep the grid layout */
 }
 
 .cards > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+  border: 1px solid #aaaaaa;
+  background-color: var(--dark-color);
+  border-radius: 4px;
+  width: 100%;
 }
 
 .cards .cards-card-body {
@@ -30,4 +39,9 @@
 .cards > ul > li img {
   width: 100%;
   object-fit: cover;
+}
+
+.cards strong {
+  color: #fff;
+  font-size: 1.15rem;
 }
