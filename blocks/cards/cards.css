@@ -9,8 +9,8 @@
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(257px, 1fr));
-  gap: 24px;
-  width: 100%;
+  gap: 30px;
+  width: 90%;
   justify-content: center;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .cards > ul > li {
-  border: 1px solid #aaa;
+  border: 1px solid #747474;
   background-color: var(--dark-color);
   border-radius: 4px;
   width: 100%;
@@ -34,14 +34,27 @@
 
 .cards .cards-card-image {
   line-height: 0;
+
 }
 
 .cards > ul > li img {
   width: 100%;
   object-fit: cover;
+  
 }
 
 .cards strong {
   color: #fff;
   font-size: 1.15rem;
+}
+
+.cards a {
+  padding: 0 !important;
+  margin: 0!important;
+  color: #fff;
+  text-decoration: none;
+}
+
+.cards p {
+  margin: 0;
 }

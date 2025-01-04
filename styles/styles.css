@@ -165,7 +165,13 @@ a:hover {
   text-decoration: underline;
 }
 
+
+
 /* buttons */
+button {
+  background-color: #6e00a9;
+}
+
 a.button:any-link,
 button {
   box-sizing: border-box;
@@ -181,8 +187,6 @@ button {
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: #6e00a9;
-  color: var(--background-color);
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
