@@ -17,6 +17,29 @@ footer .footer a {
   color: var(--dark-color);
 }
 
+footer img {
+  max-height: 45px;
+  width: auto;
+  margin: 10px;
+}
+
+footer .default-content-wrapper a {
+  text-decoration: none !important; /* Remove underline from all anchors */
+}
+
+footer .default-content-wrapper a:first-of-type:hover {
+  text-decoration: underline !important; /* Add underline to the first anchor */
+}
+
+footer .default-content-wrapper p:nth-of-type(2) a:hover {
+  text-decoration: none !important; /* Remove underline from the anchor within the second <p> */
+}
+
+footer a img:hover {
+  opacity: 0.6;
+}
+
+
 @media (width >= 900px) {
   footer .footer > div {
     padding: 40px 32px 24px;
