@@ -1,0 +1,40 @@
+.video-columns-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Space between columns */
+    justify-content: space-between; /* Spread columns evenly */
+    padding: 40px;
+  }
+  
+  .video-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between; /* Even spacing for columns */
+  }
+  
+  .video-col {
+    flex: 1 1 calc(33.33% - 46px); /* Adjust for 3 columns and space between them */
+    max-width: calc(33.33% - 46px); /* Ensure it doesn't exceed column width */
+  }
+  
+  .video-col iframe {
+    width: 70%;
+
+    aspect-ratio: 9 / 16; /* Maintain proper video aspect ratio */
+    border-radius: 10px;
+  }
+
+  div.section.fragment-container.shorts.shorts-container > div > div > div.shorts-wrapper > div > div > div > div{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    border: 1px solid rgb(102, 102, 102);
+    border-radius: 10px;
+  }
+
+
+
+
+  

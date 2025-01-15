@@ -1,6 +1,7 @@
 .columns > div {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
 }
 
 .columns img {
@@ -17,6 +18,34 @@
 
 .columns > div > .columns-img-col img {
   display: block;
+}
+
+div.section.fragment-container.shorts.columns-container div.columns-wrapper{
+  margin: 0 auto;
+  padding: 0 24px;
+  max-width: 1200px;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  /* border: 1px solid red; */
+}
+div.section.fragment-container.shorts.columns-container div.columns-wrapper div{
+
+  text-align: center;
+  margin: 0 auto;
+  /* border: 1px solid rgb(255, 0, 242); */
+}
+div.section.fragment-container.shorts.columns-container div.columns-wrapper > div > div img{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  border: 1px solid rgb(102, 102, 102);
+  border-radius: 5px;
+}
+
+#shorts {
+  border-top: 1px solid rgb(102, 102, 102);
 }
 
 @media (width >= 900px) {
