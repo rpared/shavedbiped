@@ -24,7 +24,7 @@
 .cards > ul > li {
   border: 1px solid #747474;
   background-color: var(--dark-color);
-  border-radius: 4px;
+  border-radius: 6px;
   width: 100%;
 }
 
@@ -35,13 +35,13 @@
 
 .cards .cards-card-image {
   line-height: 0;
-
+  
 }
 
 .cards > ul > li img {
   width: 100%;
   object-fit: cover;
-  
+
 }
 
 .cards strong {

@@ -14,7 +14,7 @@
   /* colors */
   --background-color: #000;
   --light-color: #f8f8f8;
-  --dark-color: #373737;
+  --dark-color: #313131;
   --text-color: #a9a9a9;
   --link-color: #fff;
   --link-hover-color: #c6b0d1;
@@ -267,7 +267,10 @@ main .section.about{
   padding: 2px 0 10px;
 }
 
-main .section.about h2 {
+main .section.about {
   color: var(--light-color);
+}
+
+main .section.about h2 {
   margin-top: 5px;
 }
