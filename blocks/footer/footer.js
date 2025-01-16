@@ -20,7 +20,7 @@ export default async function decorate(block) {
 
   // Set target="_blank" for all anchor elements in the footer
   const anchors = footer.querySelectorAll('a');
-  anchors.forEach(anchor => {
+  anchors.forEach((anchor) => {
     anchor.setAttribute('target', '_blank');
   });
 }
