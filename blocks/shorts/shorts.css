@@ -31,7 +31,7 @@
   }
 
 /* Responsive layout for tablets and mobiles */
-@media (max-width: 768px) {
+@media (width >= 768px) {
   .video-col {
     flex: 1 1 100%; /* Full width on smaller screens */
     max-width: 100%;
