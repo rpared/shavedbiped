@@ -36,6 +36,7 @@ div.section.fragment-container.shorts.columns-container div.columns-wrapper{
   display: flex;
   gap: 20px;
   justify-content: space-between;
+
   /* border: 1px solid red; */
 }
 
@@ -44,12 +45,12 @@ div.section.fragment-container.shorts.columns-container div.columns-wrapper > di
   justify-content: center;
   text-align: center;
   margin: 0 auto;
-  border: 1px solid rgb(102, 102, 102);
+  border: 1px solid rgb(102, 102, 102 / 100%);
   border-radius: 5px;
 }
 
 #shorts {
-  border-top: 1px solid rgb(102, 102, 102);
+  border: 1px solid rgb(102, 102, 102 / 100%);
 }
 
 @media (width >= 900px) {
