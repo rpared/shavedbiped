@@ -263,12 +263,9 @@ main .section.highlight {
 
 main .section.about{
   background-color: var(--dark-color);
+  color: var(--light-color);
   margin: 20px 0;
   padding: 2px 0 10px;
-}
-
-main .section.about {
-  color: var(--light-color);
 }
 
 main .section.about h2 {

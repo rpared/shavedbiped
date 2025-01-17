@@ -45,7 +45,7 @@ div.section.fragment-container.shorts.columns-container div.columns-wrapper > di
   justify-content: center;
   text-align: center;
   margin: 0 auto;
-  border: 1px solid rgb(102, 102, 102, 100);
+  border: 1px solid rgb(102 102 102 / 100%);
   border-radius: 5px;
 }
 
