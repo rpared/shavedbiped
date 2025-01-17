@@ -204,8 +204,7 @@ function filterData(searchTerms, data) {
   return [
     ...foundInHeader.sort(compareFound),
     ...foundInMeta.sort(compareFound),
-  ].map((item) => {
-    const result = item.result;
+  ].map(({ result }) => {
     const baseUrl = 'https://main--shavedbiped--rpared.aem.live/shaved-biped-video';
     const url = new URL(baseUrl);
     url.searchParams.set('video', result.path);
