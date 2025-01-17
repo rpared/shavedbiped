@@ -4,6 +4,7 @@ header .nav-wrapper {
   width: 100%;
   z-index: 2;
   position: fixed;
+  padding: 10px 0;
 }
 
 header nav {
@@ -28,6 +29,15 @@ header nav[aria-expanded='true'] {
     'tools tools' var(--nav-height) / auto 1fr;
   overflow-y: auto;
   min-height: 100dvh;
+}
+
+header nav img {
+  max-height: 70%;
+  max-width: 100%;
+}
+
+header nav a:hover {
+  opacity: 60%;
 }
 
 @media (width >= 900px) {
