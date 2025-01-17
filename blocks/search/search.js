@@ -199,19 +199,19 @@ function filterData(searchTerms, data) {
     if (minIdx >= 0) {
       foundInMeta.push({ minIdx, result });
     }
-    });
+  });
 
-    return [
-      ...foundInHeader.sort(compareFound),
-      ...foundInMeta.sort(compareFound),
-    ].map((item) => {
-      const result = item.result;
-      const baseUrl = 'https://main--shavedbiped--rpared.aem.live/shaved-biped-video';
-      const url = new URL(baseUrl);
-      url.searchParams.set('video', result.path);
-      result.url = url.toString();
-      return result;
-    });
+  return [
+    ...foundInHeader.sort(compareFound),
+    ...foundInMeta.sort(compareFound),
+  ].map((item) => {
+    const result = item.result;
+    const baseUrl = 'https://main--shavedbiped--rpared.aem.live/shaved-biped-video';
+    const url = new URL(baseUrl);
+    url.searchParams.set('video', result.path);
+    result.url = url.toString();
+    return result;
+  });
 }
 
 async function handleSearch(e, block, config) {

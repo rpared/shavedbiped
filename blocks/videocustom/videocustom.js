@@ -20,7 +20,7 @@ function extractVimeoVideoId(url) {
   return urlObj.pathname.split('/').pop();
 }
 
-function embedYouTube(videoUrl, autoplay, background) {
+function embedYouTube(videoUrl, autoplay) {
   const videoId = extractYouTubeVideoId(videoUrl);
   const suffix = autoplay ? '&autoplay=1' : '';
   const embed = `/embed/${videoId}`;
@@ -32,7 +32,7 @@ function embedYouTube(videoUrl, autoplay, background) {
   return temp.children.item(0);
 }
 
-function embedVimeo(url, autoplay, background) {
+function embedVimeo(videoUrl, autoplay, background) {
   const videoId = extractVimeoVideoId(videoUrl);
   let suffix = '';
   if (background || autoplay) {
@@ -44,7 +44,7 @@ function embedVimeo(url, autoplay, background) {
   }
   const temp = document.createElement('div');
   temp.innerHTML = `<div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;">
-      <iframe src="https://player.vimeo.com/video/${video}${suffix}" 
+      <iframe src="https://player.vimeo.com/video/${videoId}${suffix}" 
       style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;" 
       frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen  
       title="Content from Vimeo" loading="lazy"></iframe>
