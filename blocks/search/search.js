@@ -172,7 +172,8 @@ function filterData(searchTerms, data) {
       return;
     }
 
-  //   const metaContents = `${result.title} ${result.description} ${result.path.split('/').pop()}`.toLowerCase();
+  //   const metaContents = `${result.title} ${result.description}
+  //  ${result.path.split('/').pop()}`.toLowerCase();
   //   searchTerms.forEach((term) => {
   //     const idx = metaContents.indexOf(term);
   //     if (idx < 0) return;
@@ -189,28 +190,28 @@ function filterData(searchTerms, data) {
   //   ...foundInMeta.sort(compareFound),
   // ].map((item) => item.result);
   const metaContents = `${result.title} ${result.description} ${result.path.split('/').pop()}`.toLowerCase();
-searchTerms.forEach((term) => {
-  const idx = metaContents.indexOf(term);
-  if (idx < 0) return;
-  if (minIdx < idx) minIdx = idx;
-});
+  searchTerms.forEach((term) => {
+    const idx = metaContents.indexOf(term);
+    if (idx < 0) return;
+    if (minIdx < idx) minIdx = idx;
+  });
 
-if (minIdx >= 0) {
-  foundInMeta.push({ minIdx, result });
-}
-});
+  if (minIdx >= 0) {
+    foundInMeta.push({ minIdx, result });
+  }
+  });
 
-return [
-  ...foundInHeader.sort(compareFound),
-  ...foundInMeta.sort(compareFound),
-].map((item) => {
-  const result = item.result;
-  const baseUrl = "https://main--shavedbiped--rpared.aem.live/shaved-biped-video";
-  const url = new URL(baseUrl);
-  url.searchParams.set('video', result.path);
-  result.url = url.toString();
-  return result;
-});
+  return [
+    ...foundInHeader.sort(compareFound),
+    ...foundInMeta.sort(compareFound),
+  ].map((item) => {
+    const result = item.result;
+    const baseUrl = 'https://main--shavedbiped--rpared.aem.live/shaved-biped-video';
+    const url = new URL(baseUrl);
+    url.searchParams.set('video', result.path);
+    result.url = url.toString();
+    return result;
+  });
 }
 
 async function handleSearch(e, block, config) {
