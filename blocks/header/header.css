@@ -37,7 +37,7 @@ header nav img {
 }
 
 header nav a:hover {
-  opacity: 60%;
+  opacity: 0.6;
 }
 
 @media (width >= 900px) {
