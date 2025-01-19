@@ -6,6 +6,10 @@
   align-items: center;
 }
 
+div.section.search-container{
+  margin-bottom: 10px;
+}
+
 .search .search-box input {
   box-sizing: border-box;
   display: block;
@@ -70,9 +74,9 @@
   font-size: var(--body-font-size-s);
 }
 
-/* .search ul.search-results > li .search-result-image {
-  aspect-ratio: 4 / 3;
-} */
+div.section.search-container > div > div > div > span{
+filter: invert(1);
+}
 
 .search ul.search-results > li picture img {
   display: block;
