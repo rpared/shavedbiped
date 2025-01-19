@@ -1,9 +1,14 @@
 .hero-video-block {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 60vh;
     overflow: hidden;
     margin: 0 auto;
+  }
+
+
+  body > main > div.section.herovideo-container > div > div{
+    height: 60vh !important;
   }
 
   div.section.herovideo-container > div{

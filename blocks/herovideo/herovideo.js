@@ -6,12 +6,12 @@ export default async function decorate(block) {
   // Get video link from a specified anchor tag in the block
   const link = block.querySelector('a')?.href;
   if (!link) {
-    console.error('No video link found.');
+    console.log('No video link found.');
     return;
   }
 
   // Convert Dropbox link to a direct downloadable link
-  const directLink = link.replace("www.dropbox.com", "dl.dropboxusercontent.com").replace("?dl=0", "");
+  const directLink = link.replace('www.dropbox.com', 'dl.dropboxusercontent.com').replace('?dl=0', '');
 
   // Clear the block content
   block.textContent = '';
@@ -20,6 +20,7 @@ export default async function decorate(block) {
   const video = document.createElement('video');
   video.setAttribute('autoplay', 'true');
   video.setAttribute('muted', 'true'); // Ensure autoplay works without user interaction
+  video.muted = true;
   video.setAttribute('playsinline', 'true'); // For mobile compatibility
   video.setAttribute('preload', 'auto'); // Preload video for smoother playback
   video.style.width = '100%';
@@ -46,7 +47,7 @@ export default async function decorate(block) {
   // Explicitly attempt to play the video
   video.addEventListener('canplay', () => {
     video.play().catch((err) => {
-      console.error('Autoplay failed:', err);
+      console.log('Autoplay failed:', err);
     });
   });
 
@@ -61,6 +62,6 @@ export default async function decorate(block) {
     setTimeout(() => {
       video.currentTime = 0; // Reset to the start
       video.play();
-    }, 5000); // Pause for 5 seconds before looping
+    }, 3000); // Pause for 3 seconds before looping
   });
 }
