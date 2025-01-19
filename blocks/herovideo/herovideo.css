@@ -6,14 +6,14 @@
     margin: 0 auto;
   }
 
-  div.section.herovideo-container > div > div{
-    height: 60vh !important;
-  }
-
   div.section.herovideo-container div{
     padding: 0;
     margin: 0 auto;
     max-width: 100%;
+  }
+
+  div.section.herovideo-container > div > div{
+    height: 60vh !important;
   }
   
   .hero-video-block video {
