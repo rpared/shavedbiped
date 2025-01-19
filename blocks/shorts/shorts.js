@@ -75,6 +75,26 @@ function createCarousel(videos) {
     slides.appendChild(slide);
   });
 
+  function getActiveSlide(wrapper) {
+    return parseInt(wrapper.dataset.activeSlide || '0', 10);
+  }
+  
+  function showSlide(wrapper, index) {
+    const slides = wrapper.querySelectorAll('.carousel-slide');
+    const totalSlides = slides.length;
+    const newIndex = (index + totalSlides) % totalSlides;
+  
+    // Set the active slide index
+    wrapper.dataset.activeSlide = newIndex;
+  
+    // Scroll to the active slide
+    const slidesWrapper = wrapper.querySelector('.carousel-slides-container');
+    slidesWrapper.scrollTo({
+      left: slides[newIndex].offsetLeft,
+      behavior: 'smooth',
+    });
+  }
+
   // Add navigation buttons
   const prevButton = document.createElement('button');
   prevButton.className = 'slide-prev';
@@ -94,24 +114,3 @@ function createCarousel(videos) {
 
   return wrapper;
 }
-
-function getActiveSlide(wrapper) {
-  return parseInt(wrapper.dataset.activeSlide || '0', 10);
-}
-
-function showSlide(wrapper, index) {
-  const slides = wrapper.querySelectorAll('.carousel-slide');
-  const totalSlides = slides.length;
-  const newIndex = (index + totalSlides) % totalSlides;
-
-  // Set the active slide index
-  wrapper.dataset.activeSlide = newIndex;
-
-  // Scroll to the active slide
-  const slidesWrapper = wrapper.querySelector('.carousel-slides-container');
-  slidesWrapper.scrollTo({
-    left: slides[newIndex].offsetLeft,
-    behavior: 'smooth',
-  });
-}
-

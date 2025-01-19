@@ -45,6 +45,7 @@ div.section.fragment-container.shorts.shorts-container{
 
 /* Carousel Layout */
 .carousel-layout {
+  display: none;
   position: relative;
   overflow: hidden;
   width: 100%;
