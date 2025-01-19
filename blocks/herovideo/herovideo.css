@@ -7,7 +7,7 @@
   }
 
 
-  body > main > div.section.herovideo-container > div > div{
+  div.section.herovideo-container > div > div{
     height: 60vh !important;
   }
 
@@ -27,7 +27,7 @@
     z-index: -1;
   }
   
-  .hero-video-block .overlay {
+  /* .hero-video-block .overlay {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -51,8 +51,8 @@
     padding: 10px 20px;
     font-size: 1rem;
     border: none;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255 255 255 0.2);
     color: white;
     cursor: pointer;
-  }
+  } */
   
