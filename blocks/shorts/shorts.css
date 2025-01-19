@@ -34,21 +34,89 @@ div.section.fragment-container.shorts.shorts-container{
     margin: 0 auto;
   }
 
-/* Responsive layout for tablets and mobiles */
-@media (width <= 768px) {
-  .video-col {
-    flex: 1 1 100%; /* Full width on smaller screens */
-    max-width: 100%;
+/* Styles for the carousel (mobile only) */
+.carousel {
+  display: none; /* Hidden by default */
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+
+/* Carousel Layout */
+.carousel-layout {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-slides-container {
+  aspect-ratio: 9 / 16;
+  overflow: hidden; 
+  display: flex;
+  overflow-x: hidden; /* Hide overflow */
+  scroll-snap-type: x mandatory; /* Ensure slides snap into place */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  height: 600px;
+}
+
+.carousel-slides {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.carousel-slide {
+  flex: 0 0 100%; /* Each slide takes up 100% of the container width */
+  scroll-snap-align: center; /* Center align the active slide */
+  box-sizing: border-box;
+}
+
+.carousel-slide iframe {
+  width: 100%; /* Ensure iframe fills the slide */
+  height: auto;
+}
+
+.slide-prev,
+.slide-next {
+  font-size: 28px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.slide-prev {
+  left: 20px;
+}
+
+.slide-next {
+  right: 20px;
+}
+
+/* Media query for mobile */
+@media (max-width: 768px) {
+  .grid-layout {
+    display: none; /* Hide grid on mobile */
   }
 
-  .video-columns-wrapper {
-    flex-direction: column;
-}
+  .carousel-layout {
+    display: block; /* Show carousel on mobile */
+    position: relative;
+    overflow: hidden;
+  }
 
-.video-col iframe {
-  max-height: 510px;
-  max-width: fit-content;
-}
+  .carousel-slides-container {
+    display: flex;
+    scroll-snap-type: x mandatory; /* Ensure slides snap into place */
+    scroll-behavior: smooth; /* Smooth scrolling */
+  }
 }
 
   
