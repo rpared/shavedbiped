@@ -85,7 +85,7 @@ div.section.fragment-container.shorts.shorts-container{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0 0 0 50%);
   color: #fff;
   border: none;
   padding: 10px 15px;
@@ -102,7 +102,7 @@ div.section.fragment-container.shorts.shorts-container{
 }
 
 /* Media query for mobile */
-@media (max-width: 768px) {
+@media (width >= 768px) {
   .grid-layout {
     display: none; /* Hide grid on mobile */
   }
