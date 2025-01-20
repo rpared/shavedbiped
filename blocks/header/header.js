@@ -44,20 +44,6 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   }
 }
 
-function openOnKeydown(e) {
-  const focused = document.activeElement;
-  const isNavDrop = focused.className === 'nav-drop';
-  if (isNavDrop && (e.code === 'Enter' || e.code === 'Space')) {
-    const dropExpanded = focused.getAttribute('aria-expanded') === 'true';
-    toggleAllNavSections(focused.closest('.nav-sections'));
-    focused.setAttribute('aria-expanded', dropExpanded ? 'false' : 'true');
-  }
-}
-
-function focusNavSection() {
-  document.activeElement.addEventListener('keydown', openOnKeydown);
-}
-
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
     const nav = document.getElementById('nav');
@@ -86,17 +72,31 @@ function closeOnFocusLost(e) {
   }
 }
 
+function openOnKeydown(e) {
+  const focused = document.activeElement;
+  const isNavDrop = focused.className === 'nav-drop';
+  if (isNavDrop && (e.code === 'Enter' || e.code === 'Space')) {
+    const dropExpanded = focused.getAttribute('aria-expanded') === 'true';
+    toggleAllNavSections(focused.closest('.nav-sections'));
+    focused.setAttribute('aria-expanded', dropExpanded ? 'false' : 'true');
+  }
+}
+
+function focusNavSection() {
+  document.activeElement.addEventListener('keydown', openOnKeydown);
+}
+
 /**
- * Loads and decorates the header, mainly the nav
+ * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
-  // Load nav as fragment
+  // load nav as fragment
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
   const fragment = await loadFragment(navPath);
 
-  // Decorate nav DOM
+  // decorate nav DOM
   block.textContent = '';
   const nav = document.createElement('nav');
   nav.id = 'nav';
@@ -129,7 +129,7 @@ export default async function decorate(block) {
     });
   }
 
-  // Hamburger for mobile
+  // hamburger for mobile
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav-hamburger');
   hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
@@ -138,7 +138,7 @@ export default async function decorate(block) {
   hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
   nav.prepend(hamburger);
   nav.setAttribute('aria-expanded', 'false');
-  // Prevent mobile nav behavior on window resize
+  // prevent mobile nav behavior on window resize
   toggleMenu(nav, navSections, isDesktop.matches);
   isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
 
