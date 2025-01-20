@@ -5,6 +5,12 @@
 export default async function decorate(block) {
   // Get video link from a specified anchor tag in the block
   const link = block.querySelector('a')?.href;
+  
+  function handleError(message) {
+    // Custom error handling or logging
+    console.log(message);
+  }
+
   if (!link) {
     handleError('No video link found.');
     return;
@@ -65,8 +71,5 @@ export default async function decorate(block) {
     }, 3000); // Pause for 3 seconds before looping
   });
 
-  function handleError(message) {
-    // Custom error handling or logging
-    console.error(message);
-  }
+
 }
