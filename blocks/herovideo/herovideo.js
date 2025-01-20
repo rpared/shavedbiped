@@ -6,7 +6,7 @@ export default async function decorate(block) {
   // Get video link from a specified anchor tag in the block
   const link = block.querySelector('a')?.href;
   if (!link) {
-    console.log('No video link found.');
+    handleError('No video link found.');
     return;
   }
 
@@ -47,14 +47,14 @@ export default async function decorate(block) {
   // Explicitly attempt to play the video
   video.addEventListener('canplay', () => {
     video.play().catch((err) => {
-      console.log('Autoplay failed:', err);
+      handleError('Autoplay failed:', err);
     });
   });
 
   // Debugging: Check if the video can autoplay
-  console.log('Video autoplay:', video.autoplay);
-  console.log('Video muted:', video.muted);
-  console.log('Video playsinline:', video.playsInline);
+  // console.log('Video autoplay:', video.autoplay);
+  // console.log('Video muted:', video.muted);
+  // console.log('Video playsinline:', video.playsInline);
 
   // Handle pausing and replaying after 3 seconds
   video.addEventListener('ended', () => {
@@ -64,4 +64,9 @@ export default async function decorate(block) {
       video.play();
     }, 3000); // Pause for 3 seconds before looping
   });
+
+  function handleError(message) {
+    // Custom error handling or logging
+    console.error(message);
+  }
 }

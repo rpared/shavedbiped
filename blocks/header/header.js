@@ -4,20 +4,6 @@ import { loadFragment } from '../fragment/fragment.js';
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
 
-const toggleAllNavSections = (sections, expanded = false) => {
-  sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').forEach((section) => {
-    section.setAttribute('aria-expanded', expanded);
-  });
-};
-
-const toggleMenu = (nav, navSections, forceExpanded = null) => {
-  const expanded = forceExpanded !== null ? !forceExpanded : nav.getAttribute('aria-expanded') === 'true';
-  const button = nav.querySelector('.nav-hamburger button');
-  document.body.style.overflowY = (expanded || isDesktop.matches) ? '' : 'hidden';
-  nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-  toggleAllNavSections(navSections, expanded || isDesktop.matches ? 'false' : 'true');
-  button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
-
 // Define all functions as function expressions to avoid hoisting issues
 const openOnKeydown = (e) => {
   const focused = document.activeElement;
@@ -31,6 +17,12 @@ const openOnKeydown = (e) => {
 
 const focusNavSection = () => {
   document.activeElement.addEventListener('keydown', openOnKeydown);
+};
+
+const toggleAllNavSections = (sections, expanded = false) => {
+  sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').forEach((section) => {
+    section.setAttribute('aria-expanded', expanded);
+  });
 };
 
 const closeOnEscape = (e) => {
@@ -60,6 +52,14 @@ const closeOnFocusLost = (e) => {
     }
   }
 };
+
+const toggleMenu = (nav, navSections, forceExpanded = null) => {
+  const expanded = forceExpanded !== null ? !forceExpanded : nav.getAttribute('aria-expanded') === 'true';
+  const button = nav.querySelector('.nav-hamburger button');
+  document.body.style.overflowY = (expanded || isDesktop.matches) ? '' : 'hidden';
+  nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+  toggleAllNavSections(navSections, expanded || isDesktop.matches ? 'false' : 'true');
+  button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
 
   // Enable nav dropdown keyboard accessibility
   const navDrops = navSections.querySelectorAll('.nav-drop');
