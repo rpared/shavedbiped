@@ -102,7 +102,7 @@ div.section.fragment-container.shorts.shorts-container{
 }
 
 /* Media query for mobile */
-@media (width >= 768px) {
+@media (width <= 768px) {
   .grid-layout {
     display: none; /* Hide grid on mobile */
   }
