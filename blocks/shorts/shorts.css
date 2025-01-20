@@ -58,7 +58,7 @@ div.section.fragment-container.shorts.shorts-container{
   overflow-x: hidden; /* Hide overflow */
   scroll-snap-type: x mandatory; /* Ensure slides snap into place */
   scroll-behavior: smooth; /* Smooth scrolling */
-  height: 600px;
+  height: 500px;
 }
 
 .carousel-slides {
@@ -94,11 +94,11 @@ div.section.fragment-container.shorts.shorts-container{
 }
 
 .slide-prev {
-  left: 20px;
+  left: 6px;
 }
 
 .slide-next {
-  right: 20px;
+  right: 6px;
 }
 
 /* Media query for mobile */
