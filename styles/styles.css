@@ -279,6 +279,7 @@ main .section.about h2 {
     opacity: 0;
     scale: 0.5;
   }
+
   to {
     opacity: 1;
     scale: 1;
@@ -290,6 +291,7 @@ main .section.about h2 {
     opacity: 0;
     transform: translateX(-100%);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -302,7 +304,7 @@ main .section.about h2 {
   animation-range: entry 0 cover 30%;
 }
 
-.about p, .about h2, .about ul{
+.about h2, .about p, .about ul{
   animation: slide ease-in-out forwards;
   animation-timeline: view();
   animation-range: entry 0 cover 30%;
@@ -312,6 +314,7 @@ main .section.about h2 {
   .cards {
     animation: none;
   }
+
   .cards li {
     animation: slide ease-in-out forwards;
     animation-timeline: view();
