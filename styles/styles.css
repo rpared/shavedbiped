@@ -269,7 +269,7 @@ main .section.about{
   padding: 2px 0 10px;
 }
 
-main .section.about h2 {
+.about h2 {
   margin-top: 5px;
 }
 
@@ -298,7 +298,7 @@ main .section.about h2 {
   }
 }
 
-.shorts, .columns, .cards{
+.shorts, .columns, .cards li{
   animation: appear linear;
   animation-timeline: view();
   animation-range: entry 0 cover 30%;
@@ -311,10 +311,6 @@ main .section.about h2 {
 }
 
 @media (width <= 768px) {
-  .cards {
-    animation: none;
-  }
-
   .cards li {
     animation: slide ease-in-out forwards;
     animation-timeline: view();
